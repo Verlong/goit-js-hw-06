@@ -11,7 +11,10 @@ const inputValue = document.querySelector('#validation-input');
 inputValue.addEventListener('blur', e => {
   const value = e.target.value;
   console.log(value);
-  if (value.length < Number(inputValue.dataset.length)) {
+  if (
+    value.length < Number(inputValue.dataset.length) ||
+    value.length > Number(inputValue.dataset.length)
+  ) {
     e.target.classList.remove('valid');
     e.target.classList.add('invalid');
   } else {

@@ -9,7 +9,12 @@ const refs = {
 // const inputValue = document.querySelector('#name-input');
 // const nameOutput = document.querySelector('#name-output');
 refs.inputValue.addEventListener('input', onImputChange);
+
 function onImputChange(event) {
   console.log(event.currentTarget.value);
-  refs.nameOutput.textContent = event.currentTarget.value;
+  if (event.currentTarget.value === '') {
+    refs.nameOutput.textContent = 'Anonymous';
+  } else {
+    refs.nameOutput.textContent = event.currentTarget.value;
+  }
 }
